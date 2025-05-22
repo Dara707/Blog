@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- The title of the browser tab will be the post title -->
+    <title><%= post.title %></title>
+
+    <!-- Link to your external CSS file for styling -->
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <!-- Display the blog post title as a heading -->
+    <h1><%= post.title %></h1>
+
+    <!-- Display the content of the blog post -->
+    <p><%= post.content %></p>
+
+    <br />
+
+    <!-- Link to return back to the home page -->
+    <a href="/">Back to Home</a>
+  </body>
+</html>
