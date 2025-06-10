@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>New Post</title>
-  <!-- Link to external CSS file for styling -->
-  <link rel="stylesheet" href="/styles/main.css">
-</head>
-<body>
-  <h1>Create a New Blog Post</h1>
-
-  <!-- Form to submit a new blog post -->
-  <!-- The form will send a POST request to /new -->
-  <form action="/new" method="POST" class="post-form">
-    
-    <!-- Input field for the post title -->
-    <input type="text" name="title" placeholder="Post Title" required>
-
-    <!-- Textarea for the post content -->
-    <textarea name="content" placeholder="Post Content" rows="10" required></textarea>
-
-    <!-- Submit button to publish the post -->
-    <button type="submit">Publish</button>
-  </form>
-
-  <!-- Link to go back to the homepage -->
-  <a href="/">← Back to Home</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Post</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <section class="blog-section">
+      <div class="new-container">
+        <h1 class="new-text">Create a New Blog Post</h1>
+        <form action="/new" method="POST" class="post-form">
+          <div class="new-wrapper">
+            <input type="text" name="title"          placeholder="Post Title" required />
+            <textarea
+              name="content"
+               placeholder="&#10; &#10; &#10; Post Content"rows="8"
+              required
+            ></textarea>
+          </div>
+            <button class="click-btn" type="submit">Publish</button>
+           <button class="click-btn home" type="submit">Back Home</button>
+        </form>
+      
+      </div>
+    </section>
+  </body>
 </html>

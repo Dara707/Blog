@@ -2,34 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Blog</title>
-    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <h1>Welcome To My Blog</h1>
+    <section class="blog-section">
+      <div class="blog-container">
+        <h1 class="blog-text">Welcome To My Blog</h1>
+        <a class="blog-link" href="/new">Create a new post</a>
+        <% if(posts.length === 0) {%>
+        <p class="post-text">No posts yet.</p>
+        <%}else {%> <% posts.forEach((post,index) => { %>
+        <li>
+          <a href="/post/<%= index %>"><%= post.title %></a>
+          <form action="/delete/<%=index %>" method="POST">
+            <button
+              class="delete"
+              onclick="return confirm('Delete this post?')"
+              type="submit"
+            >
+              Delete
+            </button>
+          </form>
+        </li>
 
-    <!-- Link to create a new blog post -->
-    <a href='/new'>Create New Post</a>
-
-    <!-- Check if there are any posts -->
-    <% if (posts.length === 0) { %>
-        <!-- Message shown when there are no posts -->
-        <p>No posts yet.</p>
-    <% } else { %>
-        <!-- Loop through each post in the posts array -->
-        <% posts.forEach((post, index) => { %>
-            <li>
-                <!-- Link to view the individual post by its index -->
-                <a href="/post/<%= index %>"><%= post.title %></a>
-
-                <!-- Form to delete a post using POST method -->
-                <form action="/delete/<%= index %>" method="POST" style="display:inline; margin-left:10px;">
-                    <!-- Delete button with a confirmation prompt -->
-                    <button type="submit" onclick="return confirm('Delete this post?')">Delete</button>
-                </form>
-            </li>
-        <% }); %>
-    <% } %>
+        <%}) %> <% } %>
+      </div>
+    </section>
   </body>
 </html>
